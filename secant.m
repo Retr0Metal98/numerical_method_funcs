@@ -8,7 +8,8 @@ for curr_iter=1:num_iter
               x2 1];
     vector = [f(x1)
               f(x2)];
-    s = matrix\vector;
+    mat_vec_aug_R = rref_manual([matrix vector]);
+    s = mat_vec_aug_R(:,end);
     a = s(1); b = s(2);
     x3 = -b/a;
     y3 = f(x3);

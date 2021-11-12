@@ -10,7 +10,7 @@ for i=1:n
 end
 
 flag = 0; % whether solution is found
-zero_threshold = 1e-6;
+zero_threshold = 1e-10;
 x = x0;
 [x_m, x_n] = size(x);
 err_list = zeros(num_iter,1);
