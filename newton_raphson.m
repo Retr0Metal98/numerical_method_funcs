@@ -1,7 +1,6 @@
-function [x2,flag,y2,curr_iter] = newton_raphson(x1,f,df)
+function [x2,flag,y2,curr_iter] = newton_raphson(x1,f,df,num_iter)
 %NEWTON_RAPHSON 
 zero_threshold = 1e-10;
-num_iter = 1e6;
 flag = 0;
 for curr_iter=1:num_iter
     if isa(df,'function_handle') ~= 1

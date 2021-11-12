@@ -1,7 +1,6 @@
-function [x3,flag,y3,curr_iter] = secant(x1,x2,f)
+function [x3,flag,y3,curr_iter] = secant(x1,x2,f,num_iter)
 %SECANT
 zero_threshold = 1e-10;
-num_iter = 1e6;
 flag = 0;
 
 for curr_iter=1:num_iter

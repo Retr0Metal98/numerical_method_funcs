@@ -1,7 +1,7 @@
 function [func_data] = rk4(diff_func,t_range,init_vals)
 %RK4
 % inputs:
-% diff_funcs = column vector of function handles for derivatives created with 
+% diff_funcs = column vector for derivatives created with 
 % another function such as 'fun' below (no function handles) (dy/dt, dz/dt, etc.)
 % indep_range = range of values for independent variable (t),
 % init_vals = row vector of initial values for dependent variables (y0, z0, etc.)
