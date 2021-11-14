@@ -1,5 +1,6 @@
 function [func_data] = rk4(diff_func,t_range,init_vals)
 %RK4
+% Higher order ODE -> convert to system of 1st order ODEs
 % inputs:
 % diff_funcs = column vector for derivatives created with 
 % another function such as 'fun' below (no function handles) (dy/dt, dz/dt, etc.)

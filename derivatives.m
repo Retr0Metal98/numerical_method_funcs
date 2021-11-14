@@ -22,7 +22,7 @@ end
 
 function dft2 = first_3pt_backward(h,C0,C1,C2)
 % 3 point backward approximation for 1st derivative (used at end boundary)
-% C0 = f(t0), C1 = f(t1), C2 = f(t2), t1 = t0+h, t2 = t0+2*h
+% C0 = f(t0), C1 = f(t1), C2 = f(t2), t1 = t2-h, t0 = t2-2*h
 dft2 = (C0-4*C1+3*C2)/(2*h);
 end
 
@@ -33,8 +33,8 @@ dft1 = (-3*C1+4*C2-C3)/(2*h);
 end
 
 function d2ft2 = second_backward(h,C0,C1,C2)
-% 3 point forward approximation for 2nd derivative (used at end boundary)
-% C0 = f(t0), C1 = f(t1), C2 = f(t2), t1 = t0+h, t2 = t0+2*h
+% 3 point backward approximation for 2nd derivative (used at end boundary)
+% C0 = f(t0), C1 = f(t1), C2 = f(t2), t1 = t2-h, t0 = t2-2*h
 d2ft2 = (C0-2*C1+C2)/(h^2);
 end
 
