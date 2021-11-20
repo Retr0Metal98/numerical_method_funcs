@@ -1,0 +1,7 @@
+% inputs:
+% df_fun = column vector for derivatives created with 
+% another function such as 'fun' below; input as: @(t,f) fun(t,f)
+% t = range of values for independent variable (t),
+% init_vals = row vector of initial values for dependent variables (y0, z0, etc.)
+% outputs:
+% func_data = matrix of size (num_indep_steps, num_dependent_variables)
