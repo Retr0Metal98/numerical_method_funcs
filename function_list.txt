@@ -1,0 +1,41 @@
+% Linear Equation solvers: Ax = b %
+>> non-iterated
+rref_manual - get RREF R of a matrix A
+null_manual - get null space N(A) of a matrix A
+
+for square A, solution is last column of rref_manual([A b])
+for tall A, solution is last column of rref_manual([A'*A A'*b]) - vector projection
+for wide A:
+1)get particular soln. p using square A method 
+2)get null space matrix N using null_manual([A b])
+3)all solns. expressed as p + N(A)*t, t is a vector such that p & N(A)*t have same dimensions
+
+orthonorm_GS - Gram-Schmidt method to convert a set of vectors into orthonormal vectors
+
+>> iterated
+jacobi - Jacobi iterated method
+gauss_seidel - Gauss-Seidel iterated method (faster)
+
+% Non-linear Equation solvers: %
+bisection - Bisection method using two init. guesses (1 function, 1 variable ONLY)
+secant - Secant method using two init. guesses (1 function, 1 variable ONLY)
+newton_raphson - Newton-Raphson method using one init. guess & derivative function (1 function, 1 variable ONLY)
+newton_raphson_general - Newton-Raphson method generalized to any number of functions & variables
+NRG_test - shows how to use Newton-Raphson function
+
+% Differentiation and Integration: %
+derivatives - lists the various approximations for 1st & 2nd derivatives
+trapezoid - Trapezoidal rule for integration
+simpsons - Simpson's 1/3 & 3/8 rules for integration
+
+% IVP functions: %
+euler_IVP - Euler method (forward rectangular method)
+rk2 - 2nd order Runge-Kutta method
+rk4 - 4th order Runge-Kutta method
+IVP_implicit_example - example using implicit method to solve stiff IVPs
+IVP_test - example function showing to use IVP functions
+
+% BVP functions: % 
+shooting - Shooting method for BVPs (example) 
+finite_diff - Finite Difference method for BVPs (combine system of ODEs in 1 higher ODE)
+
