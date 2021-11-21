@@ -4,11 +4,11 @@ rref_manual - get RREF R of a matrix A
 null_manual - get null space N(A) of a matrix A
 
 for square A, solution is last column of rref_manual([A b])
-for tall A, solution is last column of rref_manual([A'*A A'*b]) - vector projection
+for tall A, solution is last column of rref_manual([A'*A A'*b]) - vector projection (see vect_proj_expl)
 for wide A:
-1)get particular soln. p using square A method 
-2)get null space matrix N using null_manual([A b])
-3)all solns. expressed as p + N(A)*t, t is a vector such that p & N(A)*t have same dimensions
+1)get particular soln. p using square A method: last col. of rref_manual([A b])
+2)get null space matrix N using null_manual(A); DO NOT AUGMENT with b here.
+3)all solns. expressed as p + N*t, t is a vector such that p & N*t have same dimensions
 
 orthonorm_GS - Gram-Schmidt method to convert a set of vectors into orthonormal vectors
 
