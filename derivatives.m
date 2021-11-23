@@ -2,6 +2,34 @@ function derivatives
 %DERIVATIVES Has subfunctions for approximating 1st & 2nd derivatives
 end
 
+function df = get_df_by_fitting_func(x,y)
+% input corresponds to n points
+% if n = 3 -> fit quadratic y -> get linear dy/dx
+% if n = 4 -> fit cubic y -> get quadratic dy/dx
+
+n = length(x);
+if n == 3
+    % y = a*x^2 + b*x + c
+    matrix = [x.^2 x x.*0+1];
+    vector = y;
+    R = rref_manual([matrix vector]);
+    sol = R(:,end);
+    a = sol(1); b = sol(2);
+    % dy/dx = 2*a*x + b
+    df = @(x) 2*a*x + b;
+end
+if n == 4
+    % y = a*x^3 + b*x^2 + c*x + d
+    matrix = [x.^3 x.^2 x x.*0+1];
+    vector = y;
+    R = rref_manual([matrix vector]);
+    sol = R(:,end);
+    a = sol(1); b = sol(2); c = sol(3);
+    % dy/dx = 3*a*x^2 + 2*b*x + c
+    df = @(x) 3*a*x^2 + 2*b*x + c;
+end
+end
+
 function dft1 = first_2pt_backward(h,C0,C1)
 % 2 point backward approximation for 1st derivative (used at end boundary)
 % C0 = f(t0), C1 = f(t1), t0 = t1-h
