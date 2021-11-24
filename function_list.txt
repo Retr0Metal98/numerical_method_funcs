@@ -27,6 +27,7 @@ NRG_test - shows how to use Newton-Raphson function
 derivatives - lists the various approximations for 1st & 2nd derivatives
 trapezoid - Trapezoidal rule for integration
 simpsons - Simpson's 1/3 & 3/8 rules for integration
+integration_fitting - fit polynomial functions to subsets of data to get areas for each subset.
 
 % IVP functions: %
 euler_IVP - Euler method (forward rectangular method)

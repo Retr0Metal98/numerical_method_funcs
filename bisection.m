@@ -1,7 +1,6 @@
-function [x3,flag,y3,curr_iter] = bisection(x1,x2,f)
+function [x3,flag,y3,curr_iter] = bisection(x1,x2,f,num_iter)
 %BISECTION
 zero_threshold = 1e-10;
-num_iter = 1e6;
 flag = 0;
 % run the iterations of the bisection algorithm
 for curr_iter=1:num_iter
