@@ -14,6 +14,7 @@ zero_threshold = 1e-10;
 x = x0;
 [x_m, x_n] = size(x);
 for i=1:num_iter
+    oldx = x; % x from previous iteration saved for later comparison
     for j=1:x_m
         x(j) = Dinv(j,j)*(b(j)-C(j,:)*x);
     end
@@ -23,7 +24,7 @@ for i=1:num_iter
     % normalised length of error vector (divide by length of b):
     % enorm = ((e'*e)^0.5)/((b'*b)^0.5); % or sqrt(sum(e.^2))/sqrt(sum(b.^2));
     % length of projection vector:
-    % dx = x1 - x0;
+    % dx = x - oldx;
     % enorm = (dx'*dx)^0.5; % or sqrt(sum(dx.^2));
     if enorm < zero_threshold
         flag = 1;

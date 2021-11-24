@@ -3,7 +3,7 @@ function shooting
 %   Uses bisection to search for best init value for one other unknown variable
 
 z1 = -3; z2 = 3; % bounds to search for unknown init value
-yb = 2; % actual value of known variable at BC2
+yb = 2; % actual value of known variable/expression at BC2
 y2 = init2bound(z2);
 num_iter = 1e6;
 for i=1:num_iter
@@ -27,7 +27,7 @@ y0 = 1; % known variable value at BC1
 v0 = [y0 z0]; 
 diff_func = @(t,v) dvdtf(t,v);
 v = rk4(diff_func,t,v0);
-yb_guess = v(end,1); % guessed value for known variable at BC2
+yb_guess = v(end,1); % guessed value for known variable/expression at BC2
 end
 
 function dvdt = dvdtf(t,v)

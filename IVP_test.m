@@ -1,18 +1,19 @@
 function IVP_test
 t=1:0.1:1.4;
-f0 = [1];
+f0 = [1 1];
 df = @(t,f) fun(t,f);
 f_euler = euler_IVP(df,t,f0);
 f_rk2 = rk2(df,t,f0);
-t2=1:0.2:1.4;
-f_rk4 = rk4(df,t2,f0);
-
+f_rk4 = rk4(df,t,f0);
+[t' f_rk4]
 stiff_demo
 end
 
 % Sample function 'fun'
 function dfdt = fun(t,f)
-dfdt(1) = f(1)*t^2;
+y = f(1); z = f(2);
+dfdt(1) = z;
+dfdt(2) = y*t^2 + z;
 end
 
 function stiff_demo
